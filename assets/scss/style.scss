@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
+// font-family: 'Roboto Mono', monospace;
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+// font-family: 'Open Sans', sans-serif;
+@mixin Bilder(){
+        img{
+            height:50vh;
+            padding: 0 0 3% 2%;
+        }
+        .myImg{
+           padding-left:5%
+        } 
+        &-2{
+            text-align: center;
+            bottom:15%;
+        }
+}
+body{
+    margin: 0;
+    background-color: #f7f7f7;
+}
+header{
+    height:100vh;
+    position: relative;
+    margin: 0;
+    img{
+        position: absolute;
+        height:80vh;
+        width:80vw;
+        left: 10%;
+        top:10%;
+    }
+    h1{
+        color: #fff;
+        position: absolute;
+        left:25%;
+        font-size:2em;
+        top:45%;
+        font-family: 'Open Sans', sans-serif;
+        font-weight:800;
+        .hBold{
+            font-family: sans-serif;
+        }
+    }
+    .fixed{
+        background-color: #fff;
+        position: fixed;
+        width: 100vw;
+        font-family: 'Open Sans', sans-serif;
+        bottom:0;
+        &-p{
+            text-align: right;
+            font-size: .8em;
+        }
+    }
+}
+.ideas{
+    height:100vh;
+    margin: 0;
+    &-head{
+        margin: 0;
+        text-align: center;
+        font-size:1.7em;
+        color: #000;
+        font-family: 'Open Sans', sans-serif;
+        padding-top: 10%;
+    }
+    &-Para{
+        text-align: center;
+        color:#4a4a4a;
+        line-height: 15px;
+        font-family: 'Roboto Mono', monospace;
+        font-size:.6em;
+        &-Span{
+            color: dodgerblue;
+        }
+    }
+    .images{
+        display:flex;
+        justify-content: center;
+        align-items:baseline;
+        img{
+            height:400px;
+            width: 600px;
+            margin-top: 20%;
+            }
+    }
+}
+.meet{
+    height:340vh;
+    margin: 0;
+    h1{
+        @extend .ideas-head;
+        margin-top:20%;
+    }
+    p{
+        @extend .ideas-Para;
+    }
+    &-image{
+        @include Bilder();
+        margin-top:5%;
+    }
+}
+.footer{
+    height:40vh;
+     background-color: #ffffff;
+     display:grid;
+     grid-template-columns: 1fr 2fr 6fr 2fr 1fr;
+     grid-template-rows: repeat(2,100px);
+     padding-top: 10%;
+     &-head{
+         grid-area: 1/3/2/4;
+         font-family: 'Open Sans', sans-serif;
+         justify-self: center;
+         letter-spacing: 2px;
+         text-align:center;
+     }
+     &-paragraph{
+        grid-area: 2/2/3/3;
+        font-family: 'Roboto Mono', monospace;
+        color:#4a4a4a;
+        font-size: .5em;
+        justify-self: center;
+        text-align:center;
+        align-self: center
+     }
+     &-img{
+         height:5vh;
+         width:10vw;
+         grid-area: 2/2/3/3;
+         justify-self:center;
+         align-self: flex-end;
+     }
+     &-paragraph1{
+        grid-area: 2/3/3/4;
+        align-self: flex-end;
+        @extend .footer-paragraph
+     }
+     &-a{
+        grid-area: 2/4/3/5;
+        text-decoration: none;
+        align-self: flex-end;
+        @extend .footer-paragraph
+     }
+}
+
+
